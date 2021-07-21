@@ -18,14 +18,17 @@ describe('All of the tests for fun', () => {
     
         let testOne = await driver.findElement(By.id('cell-8'))
         await testOne.click()
+        expect (await testOne.getText()).toEqual('X');
     })
     test('clicking middle table should generate an X', async () => {
         let testTwo = await driver.findElement(By.id('cell-4'))
         await testTwo.click()
+        expect(await testTwo.getText()).toEqual('X');
     })
     test('clicking the top left should generate an X', async () => {
         let testThree = await driver.findElement(By.id('cell-0'))
         await testThree.click()
+        expect(await testThree.getText()).toEqual('X');
     })
 
 })
@@ -63,6 +66,6 @@ describe('All of the tests for fun', () => {
 
 
 
-afterAll(async () => {
-    await driver.quit()
-})
+// afterAll(async () => {
+//     await driver.quit()
+// })
